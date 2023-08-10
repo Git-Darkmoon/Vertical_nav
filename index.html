@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Accordion Navbar</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <header class="navbar-header">
+        <div class="logo">C Store</div>
+
+        <!-- Shows in small screens (< 768px) -->
+        <button class="burger" id="burgerBtn">
+          <div class="burgerLine"></div>
+          <div class="burgerLine"></div>
+          <div class="burgerLine"></div>
+        </button>
+      </header>
+
+      <!-- Only "shows" in big screens -->
+      <div class="links_container">
+        <ul class="list">
+          <li><a href="#" class="links">Home</a></li>
+          <li><a href="#" class="links">About</a></li>
+          <li><a href="#" class="links">Products</a></li>
+          <li><a href="#" class="links">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="hero">
+      <img src="assets/heroPic.jpg" alt="Bird landscape" />
+    </main>
+  </body>
+  <script src="app.js" defer></script>
+</html>

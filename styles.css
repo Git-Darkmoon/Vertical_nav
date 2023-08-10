@@ -1,0 +1,145 @@
+:root {
+  --text-clr: #eeeeee;
+  --bg-clr: #121212;
+  --primary-clr: #8fb4ff;
+  --secondary-clr: #001952;
+  --accent-clr: hsl(281, 67%, 40%);
+
+  --transition: all 0.3s ease;
+
+  --nav-pd: 2rem;
+  --nav-height: 5rem;
+}
+
+body {
+  background-color: var(--bg-clr);
+}
+
+.navbar {
+  width: 100%;
+  height: auto;
+
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--primary-clr);
+  box-shadow: 0px 7px 12px var(--secondary-clr);
+
+  transition: var(--transition);
+}
+
+.navbar-header {
+  width: 100%;
+  height: var(--nav-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--nav-pd);
+}
+
+.navbar .logo {
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+.navbar .burger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  cursor: pointer;
+}
+
+.navbar .burger .burgerLine {
+  width: 2rem;
+  height: 0.25rem;
+  background-color: var(--bg-clr);
+  border-radius: 0.3rem;
+}
+
+.links_container {
+  height: auto;
+  transition: var(--transition);
+}
+
+.navbar .list {
+  display: none;
+}
+
+.navbar .showNav {
+  display: block;
+}
+
+.navbar .showNav .links {
+  width: 100%;
+  display: block;
+  padding-block: 0.5rem;
+  color: var(--secondary-clr);
+  padding-left: var(--nav-pd);
+  transition: var(--transition);
+}
+
+.navbar .showNav .links:hover {
+  background-color: #fff;
+  padding-left: calc(var(--nav-pd) + 1rem);
+}
+
+.navbar .showNav .burgerLine:nth-child(2) {
+  display: none;
+}
+
+.burger {
+  transform-origin: left center;
+}
+
+.showX .burgerLine > div {
+  transform-origin: left center;
+}
+
+.showX .burgerLine:first-child {
+  transform: rotate(45deg);
+}
+.showX .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+.showX .burgerLine:last-child {
+  transform: rotate(-45deg);
+}
+
+img {
+  max-height: calc(100dvh - var(--nav-height));
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (width >= 48rem) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar .burger {
+    display: none;
+  }
+
+  .navbar .list {
+    display: flex;
+    align-items: center;
+    padding-right: var(--nav-pd);
+    gap: 3em;
+    font-size: 1.2rem;
+  }
+
+  .navbar .list .links {
+    color: var(--secondary-clr);
+    transition: var(--transition);
+  }
+
+  .navbar .list .links:hover {
+    color: var(--accent-clr);
+  }
+}
